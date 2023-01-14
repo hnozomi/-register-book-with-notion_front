@@ -17,43 +17,7 @@ export const useScannerPageHook = () => {
     status && registerBookToNotion(isbn);
   }, [status]);
 
-  const onStart = () => {
-    const config = {
-      decoder: {
-        readers: [
-          {
-            config: {},
-            format: 'ean_reader',
-            multiple: false,
-          },
-        ],
-      },
-      inputStream: {
-        name: 'Live',
-        singleChannel: false,
-        size: 500,
-        target: '#preview',
-        type: 'LiveStream',
-      },
-      locate: true,
-      locator: {
-        halfSample: true,
-        patchSize: 'medium',
-      },
-      numOfWorker: navigator.hardwareConcurrency || 4,
-      src: null,
-    };
-
-    Quagga.init(config, function (err) {
-      if (err) {
-        console.log(err);
-        return;
-      }
-      Quagga.start();
-    });
-  };
-
-  Quagga.onDetected((result) => {
+  const isbnCheck = (result) => {
     if (!result) return;
 
     const init = result.codeResult.code.substr(0, 3);
@@ -61,8 +25,9 @@ export const useScannerPageHook = () => {
       Quagga.stop();
       setIsbn(result.codeResult.code);
       setStatus(true);
+      setScanning(false);
     }
-  });
+  };
 
   const registerBookToNotion = async (isbn) => {
     const param = {
@@ -78,8 +43,18 @@ export const useScannerPageHook = () => {
       })
       .catch((e) => {
         errorToast(e.response.data);
+      })
+      .finally(() => {
+        setIsbn('');
+        setStatus(false);
       });
   };
 
-  return { isbn, onStart, scannerRef, scanning, setIsbn, setScanning };
+  return {
+    isbn,
+    isbnCheck,
+    scannerRef,
+    scanning,
+    setScanning,
+  };
 };

@@ -15,6 +15,10 @@ a {
   box-sizing: border-box;
 }
 
+video {
+  height: 240px;
+  width: 320px
+}
 
 .imageBuffer {
   position: absolute;
@@ -26,8 +30,4 @@ a {
   position: absolute;
   left: 0;
   display: none;
-}
-
-#preview > video {
-  height: 200px;
 }
