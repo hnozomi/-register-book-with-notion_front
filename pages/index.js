@@ -1,3 +1,4 @@
+import { Heading } from '@chakra-ui/react'
 import Head from 'next/head'
 import Image from 'next/image'
 
@@ -13,9 +14,9 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
+        <Heading className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+        </Heading>
 
         <p className={styles.description}>
           Get started by editing{' '}
