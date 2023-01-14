@@ -14,3 +14,20 @@ a {
 * {
   box-sizing: border-box;
 }
+
+
+.imageBuffer {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.drawingBuffer {
+  position: absolute;
+  left: 0;
+  display: none;
+}
+
+#preview > video {
+  height: 200px;
+}
