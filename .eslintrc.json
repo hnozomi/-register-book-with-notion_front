@@ -1,0 +1,52 @@
+{
+  "root": true,
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": 2020,
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "project": "./tsconfig.eslint.json"
+  },
+  "plugins": [
+    "react",
+    "import",
+    "simple-import-sort",
+    "sort-keys-fix",
+    "sort-destructure-keys",
+    "unused-imports"
+  ],
+  "extends": ["eslint:recommended", "plugin:react/recommended", "prettier"],
+  "rules": {
+    "react-hooks/exhaustive-deps": "off",
+    "no-restricted-imports": "error",
+    "react/prop-types": 0,
+    "react/react-in-jsx-scope": 0,
+    "no-empty-function": 0,
+    "react/jsx-sort-props": [
+      "error",
+      {
+        "callbacksLast": true,
+        "shorthandFirst": true
+      }
+    ],
+    "simple-import-sort/imports": "error",
+    "simple-import-sort/exports": "error",
+    "import/first": "error",
+    "import/newline-after-import": "error",
+    "import/no-duplicates": "error",
+    "sort-keys-fix/sort-keys-fix": "error",
+    "sort-destructure-keys/sort-destructure-keys": "error",
+    "unused-imports/no-unused-imports": "error"
+  }
+}
