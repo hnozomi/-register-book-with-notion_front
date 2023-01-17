@@ -8,6 +8,7 @@ export const useScannerPageHook = () => {
   const [scanning, setScanning] = useState(false);
   const [isbn, setIsbn] = useState('');
   const [status, setStatus] = useState(false);
+  const [certification, setCertification] = useState('');
   const scannerRef = useRef(null);
 
   const errorToast = useErrorToast();
@@ -29,8 +30,10 @@ export const useScannerPageHook = () => {
     }
   };
 
+  console.log(certification);
   const registerBookToNotion = async (isbn) => {
     const param = {
+      certification: certification,
       isbn: isbn,
     };
 
@@ -55,6 +58,7 @@ export const useScannerPageHook = () => {
     isbnCheck,
     scannerRef,
     scanning,
+    setCertification,
     setScanning,
   };
 };
