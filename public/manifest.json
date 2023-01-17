@@ -1,0 +1,32 @@
+{
+    "theme_color": "#f69435",
+    "background_color": "#f69435",
+    "display": "standalone",
+    "scope": "/",
+    "start_url": "/",
+    "name": "\u66f8\u7c4d\u8a18\u9332\u30a2\u30d7\u30ea",
+    "short_name": "\u66f8\u7c4d\u8a18\u9332",
+    "description": "\u8aad\u3093\u3060\u66f8\u7c4d\u306e\u30d0\u30fc\u30b3\u30fc\u30c9\u3092\u8aad\u307f\u8fbc\u3093\u3067Notion\u306b\u60c5\u5831\u3092\u767b\u9332",
+    "icons": [
+        {
+            "src": "/icon-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/icon-256x256.png",
+            "sizes": "256x256",
+            "type": "image/png"
+        },
+        {
+            "src": "/icon-384x384.png",
+            "sizes": "384x384",
+            "type": "image/png"
+        },
+        {
+            "src": "/icon-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
